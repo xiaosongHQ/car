@@ -5,24 +5,25 @@
 <div class="main-wrap">
 
         <div class="crumb-wrap">
-            <div class="crumb-list"><i class="icon-font"></i><a href="index.html">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">用户管理</span></div>
+            <div class="crumb-list"><i class="icon-font"></i><a href="/admin">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">用户管理</span></div>
         </div>
         <div class="search-wrap">
             <div class="search-content">
-                <form action="/user/index" method="get">
+                <form action="/user" method="get">
                     <table class="search-tab">
                         <tr>
                             <th width="120">选择用户类型:</th>
                             <td>
-                                <select name="qx" id="">
-                                    <option value="">全部</option>
-                                    <option value="1">管理员</option>
-                                    <option value="2">普通用户</option>
+                                <select name="user_type">
+                                    <option {{$arr['user_type']==0 ? "selected" : ''}} value="0">全部</option>
+                                    <option {{$arr['user_type']==1 ? "selected" : ''}}  value="1">普通用户</option>
+                                    <option {{$arr['user_type']==2 ? "selected" : ''}}  value="2">商家</option>
+                                    <option {{$arr['user_type']==3 ? "selected" : ''}}  value="3">管理员</option>
                                 </select>
                             </td>
                             <th width="70">用户名:</th>
-                            <td><input class="common-text" placeholder="支持用户名模糊搜索" name="uname" value="" id="" type="text"></td>
-                            <td><input class="btn btn-primary btn2" name="sub" value="搜索" type="submit"></td>
+                            <td><input class="common-text" value="{{$arr['username']}}" placeholder="支持用户名模糊搜索" name="username"  type="text"></td>
+                            <td><input class="btn btn-primary btn2" value="搜索" type="submit"></td>
                         </tr>
                     </table>
                 </form>
@@ -32,9 +33,7 @@
             <form action='/user/delete' name="myform" id="myform" method="post">
                 <div class="result-title">
                     <div class="result-list">
-                       <button type='button' onclick="window.location.href='/user/create'"><i class="icon-font"></i>新增用户</button>&nbsp;&nbsp;
-                       <button type='submit'><i class="icon-font"></i>批量删除</button>&nbsp;&nbsp;
-                       <button><i class="icon-font"></i>更新排序</button>
+                       <button type='button' onclick="window.location.href='/user/create'"><i class="icon-font"></i>新增用户</button>
                     </div>
                 </div>
                 </form>
@@ -58,13 +57,13 @@
                             <td>{{$v->phone}}</td>
                             <td>{{$v->created_at}}</td>
                             <td>
-                                <button class="btn btn-info" href="/user/edit/{$v.id}">修改</button> &nbsp; 
-                                <form action="/user" method="post"><button style="display: inline-block;" class="btn btn-danger">删除</button></form>
+                                <a href="/user/{{$v->id}}/edit"><button class="btn btn-info">修改</button></a> &nbsp; 
+                                <form action="/user/{{$v->id}}" method="post"><button style="display: inline-block;" class="btn btn-danger">删除</button>{{csrf_field()}}{{method_field('DELETE')}}</form>
                             </td>
                         </tr>
                         @endforeach
                     </table>
-                    <div class="list-page">分页</div>
+                    <div class="list-page">{{$users->appends(request()->all())->links() }}</div>
                 </div>
             
         </div>
