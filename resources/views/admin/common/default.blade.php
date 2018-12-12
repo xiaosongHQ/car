@@ -5,6 +5,7 @@
     <title>car后台管理</title>
     <link rel="stylesheet" type="text/css" href="/static/admin/css/common.css"/>
     <link rel="stylesheet" type="text/css" href="/static/admin/css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/app.css"/>
     <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/> -->
     <script type="text/javascript" src="/static/admin/js/libs/modernizr.min.js"></script>
 </head>
@@ -65,5 +66,29 @@
     
     <!--/main-->
 </div>
+
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        error!!!
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+@if (Session::has('true'))
+    <div class="msg_true">
+        <span>{{Session::get('true')}}</span>
+    </div>
+@endif
+
+@if (Session::has('false'))
+    <div class="msg_false">
+        <span>{{Session::get('false')}}</span>
+    </div>
+@endif
+
 </body>
 </html>

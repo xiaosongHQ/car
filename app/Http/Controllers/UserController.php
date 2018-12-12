@@ -25,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('/admin/user/create');
     }
 
     /**
@@ -36,7 +36,21 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->post();
+        $this->validate($request, [
+            'username' => 'required|min:2|max:16',
+            'password' => 'required|min:6',
+            'phone' => 'required|numeric|digits_between:11,11',
+        ]);
+        $data['user_type'] = 3;
+        $data['created_at'] = time();
+        $data['password'] = md5(md5($data['password']).'wangsong');
+        unset($data['_token']);
+        if(User::insert($data)){
+            return redirect('/user')->with('true','添加成功');
+        }else{
+            return back('/user')->with('true','添加失败');
+        }
     }
 
     /**

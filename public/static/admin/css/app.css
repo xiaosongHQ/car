@@ -1,0 +1,44 @@
+.alert-danger{
+	position: fixed;
+	top: 0px;
+	left: 50%;
+	margin-left: -200px;
+	width: 400px;
+	background: #f66;
+	color:white;
+	font-weight: bold;
+}
+
+.msg_true{
+	position: fixed;
+	top: 0px;
+	left: 50%;
+	margin-left: -100px;
+	width: 200px;
+	background: yellowgreen;
+	color:white;
+	height:40px;
+	font-weight: bold;
+	text-align:center;
+	line-height: 40px;
+	font-size: 16px;
+}
+
+.msg_false{
+	position: fixed;
+	top: 0px;
+	left: 50%;
+	margin-left: -100px;
+	width: 200px;
+	background: #f66;
+	color:white;
+	height:40px;
+	font-weight: bold;
+	text-align:center;
+	line-height: 40px;
+	font-size: 16px;
+}
+
+form{
+	display: inline; 
+}

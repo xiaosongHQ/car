@@ -37,44 +37,36 @@
                        <button><i class="icon-font"></i>更新排序</button>
                     </div>
                 </div>
+                </form>
                 <div class="result-content">
                     <table class="result-tab" width="100%">
                         <tr>
                             <th class="tc" width="5%"><input class="allChoose" name="" type="checkbox"></th>
-                            <th width='5%'>ID</th>
-                            <th width='15%'>用户名</th>
-                            <th width='5%'>性别</th>
-                            <th width='8%'>用户类型</th>
-                            <th width='10%'>联系方式</th>
-                            <th width='15%'>注册时间</th>
-                            <th width='10%'>注册IP</th>
-                            <th width='5%'>头像</th>
+                            <th>序号</th>
+                            <th>用户名</th>
+                            <th>用户类型</th>
+                            <th>联系方式</th>
+                            <th>注册时间</th>
                             <th>操作</th>
                         </tr>
                         @foreach($users as $k=> $v)
                         <tr>
                             <td class="tc"><input name="uid[]" value="{$v.id}" type="checkbox"></td>
-                            <td>{$v.id}</td>
-                            <td>{$v.uname}</td>
-                            <td>{$v.sex==1 ? '男' : '女'}</td>
-                            <td>{$v.qx==1 ? '管理员' : '普通用户'}</td>
-                            <td>{$v.tel}</td>
-                            <td>{$v.rtime | date='Y-m-d H:i'}</td>
-                            <td>{:long2ip($v.rip)}</td>
-                            <td><img src='/static/userpic/{$v.pic}' width='34'></td>
+                            <td>{{$k+1}}</td>
+                            <td>{{$v->username}}</td>
+                            <td>{{$v->user_type==3 ? '管理员' : '普通用户'}}</td>
+                            <td>{{$v->phone}}</td>
+                            <td>{{$v->created_at}}</td>
                             <td>
-                                <a class="link-update" href="/user/edit/{$v.id}">修改</a> &nbsp; 
-                                <a class="link-del" href="/user/delete/{$v.id}">删除</a> &nbsp; 
-                                <a class="link-del" href="#">禁用</a> &nbsp; 
-                                <a class="link-del" href="#">备用</a>&nbsp; 
-                                <a class="link-del" href="#">备用</a>
+                                <button class="btn btn-info" href="/user/edit/{$v.id}">修改</button> &nbsp; 
+                                <form action="/user" method="post"><button style="display: inline-block;" class="btn btn-danger">删除</button></form>
                             </td>
                         </tr>
                         @endforeach
                     </table>
                     <div class="list-page">分页</div>
                 </div>
-            </form>
+            
         </div>
     </div>
 @endsection
