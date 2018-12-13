@@ -1,0 +1,87 @@
+body{
+	margin:0px;
+	padding:0px;
+	color:#000;
+}
+td{
+	font-size:13px;
+	height:22px;
+}
+        
+#div1{
+	font-size:30px;
+	float:left;
+	text-align:center;
+	width:100%;
+	height:500px;
+	background:#6cc;
+}
+a{ 
+text-decoration:none; 
+color:#000; 
+} 
+.main{
+	width:80%;
+	background: #eee;
+	margin:0 auto;
+	min-height:600px;
+}
+.mains{
+	width:80%;
+	background: #eee;
+	margin:0 auto;
+	min-height:500px;
+}
+
+.text-center{
+	text-align: center;
+}
+.header{
+	width:100%;
+	height:40px;
+	background:#f96;
+	font-size: 20px;
+	text-align: center;
+	line-height: 40px;
+	color:white;
+}
+.nav{
+	width:100%;
+	height:2px;
+	background: #eee;
+}
+.menu{
+	width:100%;
+	height:30px;
+	background: #f96;
+}
+.menu-list{
+	width:80px;
+	margin-left: 20px;
+	height:100%;
+	float:left;
+	line-height: 30px;
+	background: #f96;
+	-webkit-user-select:none;
+   -moz-user-select:none;
+   -ms-user-select:none;
+   user-select:none;
+}
+
+button { /* 按钮美化 */
+	margin:5px 0px 5px 20px;
+	width: 100; /* 宽度 */
+	height: 40px; /* 高度 */
+	border-width: 0px; /* 边框宽度 */
+	border-radius: 3px; /* 边框半径 */
+	background: #096; /* 背景颜色 */
+	cursor: pointer; /* 鼠标移入按钮范围时出现手势 */
+	outline: none; /* 不显示轮廓线 */
+	font-family: Microsoft YaHei; /* 设置字体 */
+	color: #000; /* 字体颜色 */
+	font-size: 17px; /* 字体大小 */
+}
+button:hover { /* 鼠标移入按钮范围时改变颜色 */
+	background: #085;
+	color:white;
+}

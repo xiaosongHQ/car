@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>仿iPhone计算器</title>
+        <script src="../js/jsq.js"></script>
+        <link rel="stylesheet" href="../css/jsq.css">
+    </head>
+    <body>
+        <div id="bigbox">
+            <div id="nb"></div>
+            <div id="box">
+                <div class="number" style="color:#000;background:#ccc;" onclick="start()">C</div>
+                <div class="number" style="font-size:20px;line-height:40px;color:#000;background:#ccc;"><b><sup>+</sup>/<sub>-</sub></b></div>
+                <div class="number" style="color:#000;background:#ccc;">%</div>
+                <div class="number" style="background:#f93;" onclick="chu()">÷</div>
+                <div class="number" id="7" onclick="seven()">7</div>
+                <div class="number" id="8" onclick="eight()">8</div>
+                <div class="number" id="9" onclick="nine()">9</div>
+                <div class="number" style="background:#f93;" onclick="cheng()">x</div>
+                <div class="number" id="4" onclick="four()">4</div>
+                <div class="number" id="5" onclick="five()">5</div>
+                <div class="number" id="6" onclick="six()">6</div>
+                <div class="number" style="background:#f93;" onclick="jian()">-</div>
+                <div class="number" id="1" onclick="one()">1</div>
+                <div class="number" id="2" onclick="two()">2</div>
+                <div class="number" id="3" onclick="three()">3</div>
+                <div class="number" style="background:#f93;" onclick="jia()">+</div>
+                <div class="number0" id="0" onclick="zero()">0</div>
+                <div class="number" id="d" onclick="dian()">.</div>
+                <div class="number" style="background:#f93;" onclick="jisuan()">=</div>
+            </div>
+        </div>
+    </body>
+</html>
