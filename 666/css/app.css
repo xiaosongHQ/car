@@ -24,7 +24,7 @@ color:#000;
 	width:80%;
 	background: #eee;
 	margin:0 auto;
-	min-height:600px;
+	min-height:800px;
 }
 .mains{
 	width:80%;
@@ -84,4 +84,67 @@ button { /* 按钮美化 */
 button:hover { /* 鼠标移入按钮范围时改变颜色 */
 	background: #085;
 	color:white;
+}
+#nbnb2{
+	float:left;
+	width:100px;
+	height: 200px;
+	background: blue;
+	border-radius:100px 0 0 100px;
+}
+#nbnb3{
+	float:left;
+	width:100px;
+	height: 200px;
+	background: red;
+	border-radius:0 100px 100px 0;
+}
+#bigbox{
+	float:left;
+	margin-left:33.5%;
+	margin-top:30px;
+}
+.nowtime{
+	margin: 20px;
+	color:#096;
+	font-size: 18px;
+	font-weight: bold;
+}
+.biyetime{
+	margin-bottom:20px;
+	margin-left:10%;
+	width: 80%;
+	height: 90px;
+	font-size:20px;
+	text-align: center;
+	line-height: 90px;
+	border:2px solid #abc;
+}
+#day,#h,#ii,#h,#s,#ms{
+	font-size:60px;
+	font-weight: both;
+	color:blue;
+	}
+#daohuoxian{
+	width:2px;
+	height:100px;
+	border:1px solid black;
+	background: black;
+	margin-left:100px;
+}
+#xiao{
+	width:12px;
+	height:8px;
+	background: rgb(255,0,0);
+	margin-left:96px;
+}
+#zhadan{
+	width:200px;
+	height:200px;
+	border-radius:100px;
+	background: black;
+}
+
+.index_content{
+	margin-top: 100px;
 }

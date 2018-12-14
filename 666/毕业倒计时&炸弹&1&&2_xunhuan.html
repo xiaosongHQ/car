@@ -5,88 +5,13 @@
 	<meta charset="UTF-8">
 	<title>xunhuan</title>
 	<style>
-		#nbnb2{
-			float:left;
-			width:100px;
-			height: 200px;
-			background: blue;
-			border-radius:100px 0 0 100px;
-		}
-		#nbnb3{
-			float:left;
-			width:100px;
-			height: 200px;
-			background: red;
-			border-radius:0 100px 100px 0;
-		}
-		#bigbox{
-			float:left;
-			margin-left:33.5%;
-			margin-top:30px;
-		}
-		#biyetime{
-			margin-left:10%;
-			width: 80%;
-			height: 90px;
-			font-size:20px;
-			text-align: center;
-			line-height: 90px;
-			border:2px solid #abc;
-		}
-		#day,#h,#ii,#h,#s,#ms{
-			font-size:60px;
-			font-weight: both;
-			color:blue;
-			}
-		#daohuoxian{
-			width:2px;
-			height:100px;
-			border:1px solid black;
-			background: black;
-			margin-left:100px;
-		}
-		#xiao{
-			width:12px;
-			height:8px;
-			background: rgb(255,0,0);
-			margin-left:96px;
-		}
-		#zhadan{
-			width:200px;
-			height:200px;
-			border-radius:100px;
-			background: black;
-		}
+		
 	</style>
 </head>
 <body id='main'>
 
 	<script>
-		function daojishi(set_date,set_content){
-			document.write("<div id='biyetime'><table width='100%'><tr><td style='text-align:right;'>离"+set_content+"还有<span id='day'></span>天<span id='h'></span>时<span id='ii'></span>分<span id='s'></span>秒</td><td style='text-align:left;' width='10%'><span id='ms'></span></td><td width='25.5%' style='text-align:left'>毫秒</td></tr></table></div>");
-			
-			var s = document.getElementById('s');
-			var h = document.getElementById('h');
-			var ii = document.getElementById('ii');
-			var day = document.getElementById('day');
-			var ms = document.getElementById('ms');
-			date2 = new Date(set_date);//获取结束日期时间戳
-			//定时器
-			setInterval(function(){
-				date1 = new Date();//获取当前日期时间戳
-				date3 = date2.valueOf() - date1.valueOf();//相差时间戳
-				var ddd = Math.floor(date3/(1000*60*60*24));  //相差天数
-				var hhh = Math.floor(date3/(1000*60*60));	//相差小时
-				var iii = Math.floor(date3/(1000*60));	//相差分钟
-				var sss = Math.floor(date3/(1000));	//相差秒
-				var mmm = date3;	//相差毫秒
-				day.innerHTML = ddd;
-				h.innerHTML = hhh-(ddd*24);
-				ii.innerHTML = iii-60*((ddd*24)+(hhh-(ddd*24)));
-				s.innerHTML = sss-60*((ddd*24*60) + ((hhh-(ddd*24))*60) + iii-60*((ddd*24)+(hhh-(ddd*24))));
-				ms.innerHTML = mmm-1000*((ddd*24*60*60)+ ((hhh-(ddd*24))*60*60)+ ((iii-60*((ddd*24)+(hhh-(ddd*24))))*60)+ (sss-60*((ddd*24*60) + ((hhh-(ddd*24))*60) + iii-60*((ddd*24)+(hhh-(ddd*24))))));
-			},100);
-		}
+		
 		daojishi('2018/10/21','我们毕业');
 		//daojishi('2019/01/01','过年');
 	</script>
@@ -117,7 +42,8 @@
 				nbnb3.style.background='rgb('+Math.ceil(Math.random()*255)+','+Math.ceil(Math.random()*255)+','+Math.ceil(Math.random()*255)+')';
 				}
 		}, 500);
-	</script><button onclick='kaiguan()'>点击爆炸</button>
+	</script>
+	<button onclick='kaiguan()'>点击爆炸</button>
 	<script>
 		document.write("<div id='zhadan'></div>");
 		document.write("<div id='daohuoxian'></div><div id='xiao'></div>");
