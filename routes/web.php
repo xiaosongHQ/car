@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('/home/index');
 });
 
 Route::get('/admin', function () {
@@ -21,6 +21,20 @@ Route::get('/admin', function () {
 Route::get('/admin/welcome', function () {
     return view('/admin/welcome');
 });
+
+
+Route::group(['middleware'=>'web'],function() {
+
+Route::get('/reg', function () { return view('/home/reg'); });   //用户注册
+Route::get('/login', function () { return view('/home/login'); });   //用户登录
+Route::get('/mine', 'UserController@mine');   //个人中心
+Route::resource('/movie','MovieController');   //电影资源路由
+Route::post('/do_reg', "UserController@do_reg");   //处理用户注册
+Route::post('/do_login', "UserController@do_login");   //处理用户注册
+Route::get('/login_out', "UserController@login_out");   //处理用户退出
+
+});
+
 
 
 //后台首页
