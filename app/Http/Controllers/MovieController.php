@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Comment;
 use App\Movie;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -64,8 +64,10 @@ class MovieController extends Controller
     {
         
         $movies = Movie::where('state',1)->limit(9)->get();
+        $comments = Comment::where('movie_id',$movie['id'])->get();
 
-        return view('/home/movie/movie_play',['movie'=>$movie,'movies'=>$movies]); 
+
+        return view('/home/movie/movie_play',['comments'=>$comments,'movie'=>$movie,'movies'=>$movies]); 
     }
 
     /**
